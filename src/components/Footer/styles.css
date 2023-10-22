@@ -1,0 +1,8 @@
+footer a svg {
+    fill: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}
+
+#footer_copyright:hover {
+    background: var(--gradientePrincipal);
+    color: black;
+}
