@@ -3,6 +3,6 @@ footer a svg {
 }
 
 #footer_copyright:hover {
-    background: var(--gradientePrincipal);
+    background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
     color: black;
 }
