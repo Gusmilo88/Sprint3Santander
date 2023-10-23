@@ -1,9 +1,11 @@
 import './App.css'
-import Carousel from './components/Carousel/Carousel'
-import Checkboxs from './components/Checkboxs/Checkboxs'
+import Cards from './components/Cards'
+import Carousel from './components/Carousel'
+import Checkboxs from './components/Checkboxs'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import SearchBar from './components/SearchBar/index.'
+import VistaSelector from './components/VistaSelector'
 
 function App() {
 
@@ -11,8 +13,10 @@ function App() {
     <>
       <Header/>
       <Carousel/>
+      <VistaSelector/>
       <SearchBar/>
       <Checkboxs/>
+      <Cards/>
       <Footer/>
     </>
   )

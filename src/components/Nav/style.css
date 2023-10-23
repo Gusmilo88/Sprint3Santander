@@ -1,4 +1,4 @@
-header img {
+#imgLogo {
 	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
 	animation: heartbeat 1.5s ease-in-out infinite both;
 }
@@ -80,6 +80,10 @@ header img {
     }
 }
 
+
+
+
+
 a.text-white:hover {
     background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
 }
@@ -91,4 +95,3 @@ a.text-white:hover {
 i {
         margin: 5px;
 }
-
