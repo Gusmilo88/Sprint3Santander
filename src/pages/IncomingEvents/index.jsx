@@ -5,21 +5,18 @@ import VistaSelector from '../../components/VistaSelector'
 import SearchBar from '../../components/SearchBar'
 import Layouts from '../../layouts'
 
-
-
-
-const Home = () => {
+const UpcomingEvents = () => {
   return (
     <>
       <Layouts>
-      <VistaSelector title="Home"/>
+      <VistaSelector title="Upcoming Events"/>
       <SearchBar/>
       <Checkboxs/>
-      <DivH2 title="Todos nuestros eventos:"/>
+      <DivH2 title="¡Próximas experiencias emocionantes!"/>
       <Cards/>
       </Layouts>
     </>
   )
 }
 
-export default Home
+export default UpcomingEvents
