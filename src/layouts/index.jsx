@@ -8,7 +8,6 @@ const Layouts = ({children}) => {
     <>
       <Header/>
       <Carousel/>
-      <VistaSelector/>
       {children}
       <Footer/>
     </>
