@@ -1,42 +1,58 @@
-import './style.css'
+import "./style.css";
 
 const Cards = () => {
   return (
     <div>
-  <div className="events_area">
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-lg-5">
-          <div className="main_title">
-          </div>
+      <div className="max-w-sm rounded overflow-hidden shadow-lg">
+        <img
+          className="w-full"
+          src="/img/card-top.jpg"
+          alt="Sunset in the mountains"
+        />
+        <div className="px-6 py-4">
+          <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+          <p className="text-gray-700 text-base">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Voluptatibus quia, nulla! Maiores et perferendis eaque,
+            exercitationem praesentium nihil.
+          </p>
         </div>
-      </div>
-      <div className="row">
-        <div className="single_event position-relative">
-          <div className="event_thumb">
-            <img className="event-image" src="${evento.image}" alt />
-          </div>
-          <div className="event_details">
-            <div className="d-flex mb-4">
-              <div className="date"><span>Fecha</span></div>
-              <div className="time-location">
-                <p><span className="ti-time mr-2" /> 12:00 AM - 12:30 AM</p>
-                <p><span className="ti-location-pin mr-2" />Lugar</p>
-              </div>
-            </div>
-            <h2 id="eventCardName" className="mb-2">Nombre del evento</h2>
-            <p>
-              Descripción del evento
-            </p>
-            <a href="../../src/details.html?eventName=${evento.name}&eventImage=${evento.image}&eventDescription=${evento.description}&eventPrice=${evento.price}" id="btnSeeMore" className="btn mt-3">Details</a>
-          </div>
+        <div className="px-6 pt-4 pb-2 flex justify-center">
+          <span
+            id="span1"
+            className="inline-block rounded-full px-3 py-1 text-sm font-semibold text-white"
+          >
+            <i
+              className="fa-solid fa-clock fa-beat"
+              style={{ color: "#ffffff" }}
+            />{" "}
+            22/22/23
+          </span>
+          <span
+            id="span2"
+            className="inline-block rounded-full px-3 py-1 text-sm font-semibold text-white"
+          >
+            <i
+              className="fa-solid fa-location-dot fa-beat"
+              style={{ color: "#ffffff" }}
+            />{" "}
+            #travel
+          </span>
+        </div>
+        <div className="mb-12 pb-1 pt-1 text-center">
+          <button
+            id="btn-seeMore"
+            className="mb-3 inline-block rounded px-10 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_rgba(0,0,0,0.2)] transition duration-150 ease-in-out hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)] focus:outline-none focus:ring-0 active:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.2)]"
+            type="button"
+            data-te-ripple-init
+            data-te-ripple-color="light"
+          >
+            See more
+          </button>
         </div>
       </div>
     </div>
-  </div>
-</div>
+  );
+};
 
-  )
-}
-
-export default Cards
+export default Cards;
