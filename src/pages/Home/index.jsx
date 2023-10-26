@@ -4,11 +4,24 @@ import DivH2 from '../../components/DivH2'
 import VistaSelector from '../../components/VistaSelector'
 import SearchBar from '../../components/SearchBar'
 import Layouts from '../../layouts'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 
 
 
 const Home = () => {
+
+  let [events, setEvents] = useState([])
+
+  useEffect(() => {
+    axios.get("https://mindhub-xj03.onrender.com/api/amazing")
+    .then((response) => {
+      setEvents(response.data.events)
+    })
+  })
+
+
   return (
     <>
       <Layouts>
@@ -16,7 +29,17 @@ const Home = () => {
       <SearchBar/>
       <Checkboxs/>
       <DivH2 title="Todos nuestros eventos:"/>
-      <Cards/>
+      {
+        events.map(evento => {
+
+          return(
+
+            <Cards evento={evento} />
+            
+          )
+
+        })
+      }
       </Layouts>
     </>
   )

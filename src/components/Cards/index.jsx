@@ -1,20 +1,22 @@
+import DivH2 from "../DivH2";
 import "./style.css";
 
-const Cards = () => {
+const Cards = ({evento}) => {
   return (
-    <div>
+    <>
+    {
+      evento ? 
+      <div id="divContainer">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img
           className="w-full"
-          src="/img/card-top.jpg"
-          alt="Sunset in the mountains"
+          src={evento.image ? evento.image : "No hay imagen disponible"}
+          alt={evento.place}
         />
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
+          <div className="font-bold text-xl mb-2">{evento.name ? evento.name : "No hay nombre disponible"}</div>
           <p className="text-gray-700 text-base">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Voluptatibus quia, nulla! Maiores et perferendis eaque,
-            exercitationem praesentium nihil.
+            {evento.description ? evento.description : "No hay descripción disponible"}
           </p>
         </div>
         <div className="px-6 pt-4 pb-2 flex justify-center">
@@ -26,7 +28,7 @@ const Cards = () => {
               className="fa-solid fa-clock fa-beat"
               style={{ color: "#ffffff" }}
             />{" "}
-            22/22/23
+            {evento.date}
           </span>
           <span
             id="span2"
@@ -36,7 +38,7 @@ const Cards = () => {
               className="fa-solid fa-location-dot fa-beat"
               style={{ color: "#ffffff" }}
             />{" "}
-            #travel
+            {evento.place}
           </span>
         </div>
         <div className="mb-12 pb-1 pt-1 text-center">
@@ -47,11 +49,19 @@ const Cards = () => {
             data-te-ripple-init
             data-te-ripple-color="light"
           >
-            See more
+            Details
           </button>
         </div>
       </div>
     </div>
+    :
+    <>
+    <div>
+      <h2>Evento no disponible</h2>
+    </div>
+    </>
+    }
+    </>
   );
 };
 
