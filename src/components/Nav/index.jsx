@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import'./style.css'
 
 const Nav = () => {
@@ -10,20 +11,20 @@ const Nav = () => {
                 {/* Mobile menu button */}
               </div>
               <div className="flex flex-shrink-0 items-center">
-                <a href="./../../../index.html">
+                <Link to={"/"}>
                   <img
                     id="imgLogo"
                     className="h-16 w-auto"
                     src="/src/assets/images/logo.png"
                     alt="Logo Amazing Events"
                   />
-                </a>
+                </Link>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    <a
-                      href="../../pages/Home/index.jsx"
+                    <Link
+                      to={"/"}
                       className="text-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       <i
@@ -31,9 +32,9 @@ const Nav = () => {
                         style={{color: "#ffffff"}}
                       ></i>
                       Home
-                    </a>
-                    <a
-                      href="./upcomingEvents.html"
+                    </Link>
+                    <Link
+                      to={"upcomingEvents"}
                       className="text-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       <i
@@ -41,9 +42,9 @@ const Nav = () => {
                         style={{color: "#ffffff"}}
                       ></i>
                       Upcoming Events
-                    </a>
-                    <a
-                      href="./pastEvents.html"
+                    </Link>
+                    <Link
+                      to={"/pastEvents"}
                       className="text-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       <i
@@ -51,9 +52,9 @@ const Nav = () => {
                         style={{color: "#fcfcfc"}}
                       ></i>
                       Past Events
-                    </a>
-                    <a
-                      href="./contact.html"
+                    </Link>
+                    <Link
+                      to={"/contact"}
                       className="text-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       <i
@@ -61,9 +62,9 @@ const Nav = () => {
                         style={{color: "#ffffff"}}
                       ></i>
                       Contact
-                    </a>
-                    <a
-                      href="./stats.html"
+                    </Link>
+                    <Link
+                      to={"/stats"}
                       className="text-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
                     >
                       <i
@@ -71,7 +72,7 @@ const Nav = () => {
                         style={{color: "#ffffff"}}
                       ></i>
                       Stats
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

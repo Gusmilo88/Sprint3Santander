@@ -5,7 +5,7 @@ import FormContact from "../../components/FormContact";
 const Contact = () => {
   return (
     <Layouts>
-      <VistaSelector title="Contact" />
+      <VistaSelector title="Contact" arrowLeft="/pastEvents" arrowRight="/stats"/>
         <FormContact/>
     </Layouts>
   );

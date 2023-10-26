@@ -6,6 +6,7 @@ import SearchBar from '../../components/SearchBar'
 import Layouts from '../../layouts'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Carousel from '../../components/Carousel'
 
 
 
@@ -25,7 +26,8 @@ const Home = () => {
   return (
     <>
       <Layouts>
-      <VistaSelector title="Home"/>
+      <Carousel/>
+      <VistaSelector title="Home" arrowLeft="/stats" arrowRight="/upcomingEvents"/>
       <SearchBar/>
       <Checkboxs/>
       <DivH2 title="Todos nuestros eventos:"/>
