@@ -36,7 +36,7 @@ const Home = () => {
 
           return(
 
-            <Cards evento={evento} />
+            <Cards evento={evento} buttonText="See more" pathText="/details"/>
             
           )
 
