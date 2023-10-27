@@ -1,4 +1,4 @@
-import NotFound from "./pages/NotFound"
+import NotFound from "./pages/404NotFound"
 import Contact from "./pages/Contact"
 import Details from "./pages/Details"
 import Home from "./pages/Home"
