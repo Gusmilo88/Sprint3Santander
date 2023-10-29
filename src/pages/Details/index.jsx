@@ -3,8 +3,12 @@ import Layouts from '../../layouts/index';
 import EventImage from '../../components/EventImage';
 import EventInfo from '../../components/EventInfo';
 import Button from '../../components/Button';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Details() {
+
+
   return (
     <Layouts>
       <section className="text-gray-700 body-font overflow-hidden bg-white">

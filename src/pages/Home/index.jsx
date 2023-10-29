@@ -13,12 +13,15 @@ import Carousel from '../../components/Carousel'
 
 const Home = () => {
 
-  let [events, setEvents] = useState([])
+  let [eventos, setEventos] = useState([])
+  let [eventosFiltrados, setevEntosFiltrados] = useState([])
+
 
   useEffect(() => {
     axios.get("https://mindhub-xj03.onrender.com/api/amazing")
     .then((response) => {
-      setEvents(response.data.events)
+      setEventos(response.data.events)
+      setevEntosFiltrados(response.data.events)
     })
   })
 
@@ -32,11 +35,11 @@ const Home = () => {
       <Checkboxs/>
       <DivH2 title="Todos nuestros eventos:"/>
       {
-        events.map(evento => {
+        eventosFiltrados.map(evento => {
 
           return(
 
-            <Cards evento={evento} buttonText="See more" pathText="/details"/>
+            <Cards key={evento._id} evento={evento} buttonText="See more" pathText="/details/:id"/>
             
           )
 
