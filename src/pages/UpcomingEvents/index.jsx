@@ -19,7 +19,7 @@ const UpcomingEvents = () => {
     .then((response) => {
       setEvents(response.data.events)
     })
-  })
+  }, [])
 
   return (
     <>
