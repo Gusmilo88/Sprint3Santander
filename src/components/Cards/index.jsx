@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import DivH2 from "../DivH2";
 import "./style.css";
 import Button from "../Button";
 

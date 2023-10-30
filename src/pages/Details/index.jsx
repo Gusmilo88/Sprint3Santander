@@ -48,7 +48,7 @@ function Details() {
           <div className="lg:w-4/5 mx-auto flex flex-wrap">
             <EventImage image={evento.image} />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-              <EventInfo id={evento.id} description={evento.description} price={evento.price} />
+              <EventInfo id={evento.id} name={evento.name} description={evento.description} price={evento.price} date={evento.date} place={evento.place} />
               <Button buttonName="Buy" />
             </div>
           </div>
