@@ -1,14 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Layouts from "../../layouts";
 import Tables from "../../components/Tables";
 import VistaSelector from "../../components/VistaSelector";
+import axios from 'axios';
 
 const Stats = () => {
+
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://mindhub-xj03.onrender.com/api/amazing')
+      .then(response => {
+        setEvents(response.data.events);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  }, []);
+
+
   return (
     <>
       <Layouts>
         <VistaSelector title="Stats" arrowLeft="/contact" arrowRight="/"/>
-        <Tables/>
+        <Tables events={events}/>
       </Layouts>
     </>
   );

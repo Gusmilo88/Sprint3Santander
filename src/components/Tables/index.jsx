@@ -1,15 +1,19 @@
-const Tables = () => {
+const Tables = ({events}) => {
+
+
+  
   return (
     <div>
       {/* Tabla Events */}
+      <div className="my-5">
       <table className="table table-dark table-striped">
         <thead>
           <tr>
-            <th colSpan={3}>Events statistics</th>
+            <th colSpan={3} className="text-center text-2xl">Events statistics</th>
           </tr>
           <tr>
-            <th>Events with the highest percentage of attendance</th>
-            <th>Events with the lowest percentage of attendance</th>
+            <th>Events with the highest percentage of assistance</th>
+            <th>Events with the lowest percentage of assistance</th>
             <th>Events with the largest capacity</th>
           </tr>
         </thead>
@@ -19,18 +23,55 @@ const Tables = () => {
             <td>1</td>
             <td>1</td>
           </tr>
+        </tbody>
+      </table>
+      </div>
+
+      <div className="my-5">
+      <table className="table table-dark table-striped">
+        <thead>
           <tr>
-            <td>2</td>
-            <td>2</td>
-            <td>2</td>
+            <th colSpan={3} className="text-center text-2xl">Upcoming events statistics by category</th>
           </tr>
           <tr>
-            <td>3</td>
-            <td>3</td>
-            <td>3</td>
+            <th>Categories</th>
+            <th>Revenues</th>
+            <th>Porcentage of attendance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
           </tr>
         </tbody>
       </table>
+      </div>
+
+
+      <div className="my-5">
+      <table className="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th colSpan={3} className="text-center text-2xl">Past events statistics by category</th>
+          </tr>
+          <tr>
+            <th>Categories</th>
+            <th>Revenues</th>
+            <th>Porcentage of attendance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+
     </div>
   );
 };
