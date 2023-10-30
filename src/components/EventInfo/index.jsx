@@ -1,19 +1,17 @@
-import { useParams } from "react-router-dom"
 
-const EventInfo = () => {
+const EventInfo = ({id, description, price}) => {
 
-  let params = useParams()
 
   return (
     <div>
         <div id="contenedorH1">
-          <h2>{params.id}</h2>
+          <h2>{id}</h2>
         </div>
         <div id="contenedorP">
-          <p>ads</p>
+          <p>{description} </p>
         </div>
         <div id="contenedorSpan">
-          <span>asd</span>
+          <span>{price} </span>
         </div>
       </div>
   )

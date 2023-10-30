@@ -23,7 +23,7 @@ const Home = () => {
       setEventos(response.data.events)
       setevEntosFiltrados(response.data.events)
     })
-  })
+  },[])
 
 
   return (
@@ -31,7 +31,7 @@ const Home = () => {
       <Layouts>
       <Carousel/>
       <VistaSelector title="Home" arrowLeft="/stats" arrowRight="/upcomingEvents"/>
-      <SearchBar/>
+      <SearchBar setevEntosFiltrados={setevEntosFiltrados} />
       <Checkboxs/>
       <DivH2 title="Todos nuestros eventos:"/>
       {
@@ -39,7 +39,7 @@ const Home = () => {
 
           return(
 
-            <Cards key={evento._id} evento={evento} buttonText="See more" pathText="/details/:id"/>
+            <Cards key={evento._id} evento={evento} buttonText="See more" pathText={"/details/" + evento._id}/>
             
           )
 

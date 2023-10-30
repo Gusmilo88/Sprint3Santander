@@ -1,8 +1,8 @@
   
-  const EventImage = () => {
+  const EventImage = ({image}) => {
     return (
       <div id="contenedorImg">
-        {/* Contenido de la imagen */}
+        <img src={image} alt="" />
       </div>
     )
   }

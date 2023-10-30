@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import "./style.css";
 import axios from "axios";
 
-const SearchBar = () => {
+const SearchBar = ({setevEntosFiltrados}) => {
 
   let [eventos, setEventos] = useState([])
-  let [eventosFiltrados, setEventosFiltrados] = useState([])
 
 
 
@@ -16,7 +15,7 @@ const SearchBar = () => {
     
     let arrayFiltrado = eventos.filter((evento) => evento.name.includes(searchInputEl.current.value))
     console.log(arrayFiltrado);
-    setEventos(arrayFiltrado)
+    setevEntosFiltrados(arrayFiltrado)
   }
 
 

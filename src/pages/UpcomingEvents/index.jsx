@@ -8,6 +8,8 @@ import Carousel from '../../components/Carousel'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
+
+
 const UpcomingEvents = () => {
 
   let [events, setEvents] = useState([])
