@@ -12,12 +12,24 @@ import axios from 'axios'
 
 const UpcomingEvents = () => {
 
-  let [events, setEvents] = useState([])
+
+  //Acá filtramos los eventos que tengan date mayores a "currenDate"
+  function getFutureEvents(events, currentDate) {
+
+    return events.filter(event => new Date(event.date) > new Date(currentDate));
+
+  }
+
+  const [events, setEvents] = useState([]);
+  const [futureEvents, setFutureEvents] = useState([]);
 
   useEffect(() => {
     axios.get("https://mindhub-xj03.onrender.com/api/amazing")
     .then((response) => {
       setEvents(response.data.events)
+
+      const filteredFutureEvents = getFutureEvents(response.data.events, "2023-03-10");
+      setFutureEvents(filteredFutureEvents);
     })
   }, [])
 
@@ -29,17 +41,9 @@ const UpcomingEvents = () => {
       <SearchBar/>
       <Checkboxs/>
       <DivH2 title="¡Próximas experiencias emocionantes!"/>
-      {
-        events.map(evento => {
-
-          return(
-
-            <Cards evento={evento} buttonText="See more"/>
-            
-          )
-
-        })
-      }
+      {futureEvents.map(evento => (
+          <Cards key={evento._id} evento={evento} buttonText="See more" pathText={`/details/${evento._id}`} />
+        ))}
       </Layouts>
     </>
   )
