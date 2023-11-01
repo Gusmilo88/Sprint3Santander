@@ -14,14 +14,13 @@ const SearchBar = ({setEventosFiltrados}) => {
   function mostrarValue() {
     
     let arrayFiltrado = eventos.filter((evento) => evento.name.toLowerCase().includes(searchInputEl.current.value.toLowerCase()))
-    console.log(arrayFiltrado);
     setEventosFiltrados(arrayFiltrado)
   }
 
 
 
   useEffect(() => {
-    axios.get("https://mindhub-xj03.onrender.com/api/amazing")
+    axios.get("src/data/data.json")
     .then((response) => {
       setEventos(response.data.events)
       setEventosFiltrados(response.data.events)

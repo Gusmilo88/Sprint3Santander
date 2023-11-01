@@ -4,7 +4,7 @@ import EventImage from '../../components/EventImage';
 import EventInfo from '../../components/EventInfo';
 import Button from '../../components/Button';
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from 'react'; // Importa useEffect y useState
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 function Details() {
@@ -13,7 +13,7 @@ function Details() {
 
   useEffect(() => {
     
-    axios.get(`https://mindhub-xj03.onrender.com/api/amazing`)
+    axios.get("/src/data/data.json")
       .then(response => {
         const evento = response.data.events.find(evento => evento._id == id)
         console.log(evento);

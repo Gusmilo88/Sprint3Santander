@@ -1,6 +1,4 @@
 const Tables = ({events}) => {
-
-
   
   return (
     <div>

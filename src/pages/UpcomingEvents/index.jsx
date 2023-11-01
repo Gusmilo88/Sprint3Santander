@@ -24,7 +24,7 @@ const UpcomingEvents = () => {
   const [futureEvents, setFutureEvents] = useState([]);
 
   useEffect(() => {
-    axios.get("https://mindhub-xj03.onrender.com/api/amazing")
+    axios.get("src/data/data.json")
     .then((response) => {
       setEvents(response.data.events)
 
