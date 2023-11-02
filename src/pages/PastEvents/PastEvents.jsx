@@ -39,9 +39,16 @@ const PastEvents = () => {
       <SearchBar/>
       <Checkboxs/>
       <DivH2 title="Experiencias que hicieron historia:"/>
-      {pastEvents.map(evento => (
-          <Cards key={evento._id} evento={evento} buttonText="See more" pathText={`/details/${evento._id}`} />
-        ))}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center mx-4">
+          {pastEvents.map((evento) => (
+            <Cards
+              key={evento._id}
+              evento={evento}
+              buttonText="See more"
+              pathText={"/details/" + evento._id}
+            />
+          ))}
+        </div>
       </Layouts>
     </>
     
