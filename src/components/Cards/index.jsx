@@ -7,7 +7,7 @@ const Cards = ({evento, buttonText, pathText}) => {
     {
       evento ? 
       <div id="divContainer">
-      <div className="max-w-sm rounded overflow-hidden shadow-lg">
+      <div className="mx-auto max-w-sm rounded overflow-hidden shadow-lg">
         <img
           className="w-full"
           src={evento.image ? evento.image : "No hay imagen disponible"}
