@@ -34,17 +34,16 @@ const Home = () => {
       <SearchBar setEventosFiltrados={setEventosFiltrados} />
       <Checkboxs/>
       <DivH2 title="Todos nuestros eventos:"/>
-      {
-        eventosFiltrados.map(evento => {
-
-          return(
-
-            <Cards key={evento._id} evento={evento} buttonText="See more" pathText={"/details/" + evento._id}/>
-            
-          )
-
-        })
-      }
+      <div className="grid grid-cols-1 md:grid-cols-2">
+          {eventosFiltrados.map((evento) => (
+            <Cards
+              key={evento._id}
+              evento={evento}
+              buttonText="See more"
+              pathText={"/details/" + evento._id}
+            />
+          ))}
+        </div>
       </Layouts>
     </>
   )
