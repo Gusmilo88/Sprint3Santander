@@ -41,16 +41,9 @@ const UpcomingEvents = () => {
       <SearchBar/>
       <Checkboxs/>
       <DivH2 title="¡Próximas experiencias emocionantes!"/>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center mx-4">
-          {futureEvents.map((evento) => (
-            <Cards
-              key={evento._id}
-              evento={evento}
-              buttonText="See more"
-              pathText={"/details/" + evento._id}
-            />
-          ))}
-        </div>
+      {futureEvents.map(evento => (
+          <Cards key={evento._id} evento={evento} buttonText="See more" pathText={`/details/${evento._id}`} />
+        ))}
       </Layouts>
     </>
   )
