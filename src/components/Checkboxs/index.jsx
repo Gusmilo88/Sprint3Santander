@@ -3,7 +3,7 @@ import "./style.css";
 import axios from "axios";
 
 
-const Checkboxs = () => {
+const Checkboxs = ({setEventosFiltrados}) => {
 
     let [eventos, setEventos] = useState([])
 
@@ -29,16 +29,16 @@ const Checkboxs = () => {
         if(e.target.checked){
             const resultadoCategoria = eventos.filter(evento => evento.category === e.target.value)
 
-            setDatosFiltrados([
+            setEventosFiltrados([
                 ...datosFiltrados,
                 ...resultadoCategoria
                 
             ])
             
         }else {
-            const resultadoCategoria = datosFiltrados.filter(evento => evento.category !== e.target.value)
+            const resultadoCategoria = eventos.filter(evento => evento.category !== e.target.value)
 
-            setDatosFiltrados([...resultadoCategoria])
+            setEventosFiltrados([...resultadoCategoria])
         }
   }
 
