@@ -5,7 +5,7 @@ function Header() {
   return (
     
       <>
-      <header>
+      <header role='header'>
         <Nav/>
       </header>
       </>
