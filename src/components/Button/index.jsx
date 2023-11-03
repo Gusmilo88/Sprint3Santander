@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Button = ({buttonName, path}) => {
   return (
-    <div>
+    <div role="button">
       <Link to={path}>
           <button
             id="btn-seeMore"

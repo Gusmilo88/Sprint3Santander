@@ -3,7 +3,7 @@ import'./style.css'
 const Carousel = () => {
   return (
 <div>
-  <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div role='carousel' id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
     <div className="carousel-inner">
       <div className="carousel-item active">
         <img src="/src/assets/images/carrusel1.jpg" className="d-block w-100" alt="..." />

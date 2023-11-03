@@ -54,7 +54,7 @@ const Checkboxs = ({setEventosFiltrados}) => {
 
   return (
     <div>
-      <div className="md:flex-col lg:flex-row mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
+      <div role="checkboxs" className="md:flex-col lg:flex-row mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
         {/*Concert checkbox*/}
         <div className="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
           <input

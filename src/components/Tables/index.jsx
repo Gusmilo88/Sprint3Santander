@@ -1,7 +1,7 @@
 const Tables = ({events}) => {
   
   return (
-    <div>
+    <div role="tables">
       {/* Tabla Events */}
       <div className="my-5">
       <table className="table table-dark table-striped">

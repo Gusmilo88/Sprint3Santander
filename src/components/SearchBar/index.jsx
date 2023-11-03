@@ -29,7 +29,7 @@ const SearchBar = ({setEventosFiltrados}) => {
 
 
   return (
-    <div>
+    <div role="searchBar">
       {/*Barra de buscar*/}
       <div className="m-4 fle h-full flex justify-end items-center gap-4">
         <div className="relative mb-4 flex w-72 flex-wrap items-stretch">

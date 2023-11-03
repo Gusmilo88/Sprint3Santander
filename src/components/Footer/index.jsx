@@ -4,7 +4,7 @@ import'./style.css'
 const Footer = () => {
   return (
     <div>
-  <footer className="flex flex-col items-center text-center dark:bg-zinc-900">
+  <footer role='footer' className="flex flex-col items-center text-center dark:bg-zinc-900">
     <div className="container pt-9">
       <div className="mb-9 flex justify-center">
         <a href="https://www.facebook.com/" target="_blank" className="mr-9">

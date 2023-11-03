@@ -4,6 +4,7 @@ import Button from "../Button";
 const Cards = ({evento, buttonText, pathText}) => {
   return (
     <>
+    <div role="cards">
     {
       evento ? 
       <div id="divContainer">
@@ -53,6 +54,7 @@ const Cards = ({evento, buttonText, pathText}) => {
     </div>
     </>
     }
+    </div>
     </>
   );
 };

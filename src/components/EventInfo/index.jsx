@@ -4,7 +4,7 @@ import "./style.css"
 const EventInfo = ({name, description, price, date, place}) => {
 
   return (
-    <div>
+    <div role="eventInfo">
   <div id="contenedorH2" className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
     <h2>{name}</h2>
   </div>
