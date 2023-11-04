@@ -6,9 +6,17 @@ import axios from 'axios';
 
 const Stats = () => {
 
+  //Para sacar MAYOR porcentaje:
   let [highestAttendanceEvent, setHighestAttendanceEvent] = useState(null);
   let [highestAttendancePercentage, setHighestAttendancePercentage] = useState(0);
 
+  //Para sacar el MENOR porcentaje:
+  let [lowestAttendanceEvent, setLowestAttendanceEvent] = useState(null);
+  let [lowestAttendancePercentage, setLowestAttendancePercentage] = useState(100); // Inicialízalo en 100%
+
+  //Para sacar el que tiene MÁS capacidad:
+  let [largestCapacityEvent, setLargestCapacityEvent] = useState(null);
+  let [largestCapacity, setLargestCapacity] = useState(0);
 
   let [events, setEvents] = useState([]);
 
@@ -29,10 +37,25 @@ const Stats = () => {
           maxAttendancePercentage = attendancePercentage;
           maxAttendanceEvent = event;
         }
+
+        if (attendancePercentage < lowestAttendancePercentage) {
+          lowestAttendancePercentage = attendancePercentage;
+          lowestAttendanceEvent = event;
+        }
+
+        // Si la capacidad actual es mayor, actualizamos largestCapacity y largestCapacityEvent con los nuevos valores.
+        if (event.capacity > largestCapacity) {
+          largestCapacity = event.capacity;
+          largestCapacityEvent = event;
+        }
       }
 
       setHighestAttendanceEvent(maxAttendanceEvent);
       setHighestAttendancePercentage(maxAttendancePercentage);
+      setLowestAttendanceEvent(lowestAttendanceEvent);
+      setLowestAttendancePercentage(lowestAttendancePercentage);
+      setLargestCapacityEvent(largestCapacityEvent);
+      setLargestCapacity(largestCapacity);
 
       })
       .catch(error => {
@@ -45,7 +68,7 @@ const Stats = () => {
     <>
       <Layouts>
         <VistaSelector title="Stats" arrowLeft="/contact" arrowRight="/"/>
-        <Tables events={events} highestAttendanceEvent={highestAttendanceEvent} highestAttendancePercentage={highestAttendancePercentage} />
+        <Tables events={events} highestAttendanceEvent={highestAttendanceEvent} highestAttendancePercentage={highestAttendancePercentage} lowestAttendanceEvent={lowestAttendanceEvent} lowestAttendancePercentage={lowestAttendancePercentage} largestCapacityEvent={largestCapacityEvent} largestCapacity={largestCapacity} />
       </Layouts>
     </>
   );

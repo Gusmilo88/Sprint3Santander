@@ -1,4 +1,4 @@
-const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage}) => {
+const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lowestAttendanceEvent, lowestAttendancePercentage, largestCapacityEvent, largestCapacity}) => {
   
   return (
     <div role="tables">
@@ -17,9 +17,9 @@ const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage}) 
         </thead>
         <tbody>
           <tr>
-            <td>{highestAttendanceEvent ? highestAttendanceEvent.name : "No hay infomarción disponible"} {highestAttendancePercentage.toFixed(2)} %</td>
-            <td></td>
-            <td>1</td>
+            <td>{highestAttendanceEvent ? highestAttendanceEvent.name : "No hay infomarción disponible"}: {highestAttendancePercentage.toFixed(2)} %</td>
+            <td>{lowestAttendanceEvent ? lowestAttendanceEvent.name : "No hay información disponible"}: {lowestAttendancePercentage.toFixed(2)}% </td>
+            <td>{largestCapacityEvent ? largestCapacityEvent.name : "No hay información disponible"}: {largestCapacity}</td>
           </tr>
         </tbody>
       </table>
