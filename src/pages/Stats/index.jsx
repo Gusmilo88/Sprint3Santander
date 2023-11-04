@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Layouts from "../../layouts";
 import Tables from "../../components/Tables";
 import VistaSelector from "../../components/VistaSelector";
@@ -6,12 +6,34 @@ import axios from 'axios';
 
 const Stats = () => {
 
-  const [events, setEvents] = useState([]);
+  let [highestAttendanceEvent, setHighestAttendanceEvent] = useState(null);
+  let [highestAttendancePercentage, setHighestAttendancePercentage] = useState(0);
+
+
+  let [events, setEvents] = useState([]);
 
   useEffect(() => {
     axios.get('src/data/data.json')
       .then(response => {
-        setEvents(response.data.events);
+        
+        let events = response.data.events;
+
+        // Encuentra el evento con el mayor porcentaje de asistencia
+        let maxAttendanceEvent = null;
+        let maxAttendancePercentage = 0;
+
+        for (let event of events) {
+         let attendancePercentage = (event.assistance / event.capacity) * 100;
+
+        if (attendancePercentage > maxAttendancePercentage) {
+          maxAttendancePercentage = attendancePercentage;
+          maxAttendanceEvent = event;
+        }
+      }
+
+      setHighestAttendanceEvent(maxAttendanceEvent);
+      setHighestAttendancePercentage(maxAttendancePercentage);
+
       })
       .catch(error => {
         console.error("Error:", error);
@@ -23,7 +45,7 @@ const Stats = () => {
     <>
       <Layouts>
         <VistaSelector title="Stats" arrowLeft="/contact" arrowRight="/"/>
-        <Tables events={events}/>
+        <Tables events={events} highestAttendanceEvent={highestAttendanceEvent} highestAttendancePercentage={highestAttendancePercentage} />
       </Layouts>
     </>
   );

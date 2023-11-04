@@ -1,4 +1,4 @@
-const Tables = ({events}) => {
+const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage}) => {
   
   return (
     <div role="tables">
@@ -17,8 +17,8 @@ const Tables = ({events}) => {
         </thead>
         <tbody>
           <tr>
-            <td>1</td>
-            <td>1</td>
+            <td>{highestAttendanceEvent ? highestAttendanceEvent.name : "No hay infomarción disponible"} {highestAttendancePercentage.toFixed(2)} %</td>
+            <td></td>
             <td>1</td>
           </tr>
         </tbody>
