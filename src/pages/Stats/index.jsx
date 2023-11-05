@@ -21,6 +21,9 @@ const Stats = () => {
   //Para sacar los eventos FUTUROS:
   let [upcomingEvents, setUpcomingEvents] = useState([]);
 
+  //Para sacar los eventos PASADOS:
+  let [pastEvents, setPastEvents] = useState([]);
+
 
   let [events, setEvents] = useState([]);
 
@@ -58,11 +61,18 @@ const Stats = () => {
       //Sacamos la fecha del JSON
       const currentDate = new Date(response.data.currentDate);
 
-      //Filtramos para tener los eventos futuros
+      //Filtramos para tener los eventos FUTUROS
       const futureEvents = events.filter(event => new Date(event.date) > currentDate);
 
-      //Mostramos solamente 5 eventos
+      //Mostramos solamente 5 eventos del FUTURO
       const upcoming = futureEvents.slice(0, 5);
+
+      //Filtramos para tener los eventos PASADOS
+      const pastEvents = events.filter(event => new Date(event.date) < currentDate);
+
+      //Mostramos solamente 5 eventos del PASADO
+      const past = pastEvents.slice(0, 5);
+
 
       //Seteamos con los nuevos valores
       setHighestAttendanceEvent(maxAttendanceEvent);
@@ -72,6 +82,8 @@ const Stats = () => {
       setLargestCapacityEvent(largestCapacityEvent);
       setLargestCapacity(largestCapacity);
       setUpcomingEvents(upcoming);
+      setPastEvents(past);
+
 
 
       })
@@ -85,7 +97,7 @@ const Stats = () => {
     <>
       <Layouts>
         <VistaSelector title="Stats" arrowLeft="/contact" arrowRight="/"/>
-        <Tables events={events} highestAttendanceEvent={highestAttendanceEvent} highestAttendancePercentage={highestAttendancePercentage} lowestAttendanceEvent={lowestAttendanceEvent} lowestAttendancePercentage={lowestAttendancePercentage} largestCapacityEvent={largestCapacityEvent} largestCapacity={largestCapacity} upcomingEvents={upcomingEvents} />
+        <Tables events={events} highestAttendanceEvent={highestAttendanceEvent} highestAttendancePercentage={highestAttendancePercentage} lowestAttendanceEvent={lowestAttendanceEvent} lowestAttendancePercentage={lowestAttendancePercentage} largestCapacityEvent={largestCapacityEvent} largestCapacity={largestCapacity} upcomingEvents={upcomingEvents} pastEvents={pastEvents} />
       </Layouts>
     </>
   );
