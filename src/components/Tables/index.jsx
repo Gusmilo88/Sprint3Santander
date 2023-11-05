@@ -39,10 +39,11 @@ const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lo
         </thead>
         <tbody>
         {upcomingEvents.map(event => (
+          console.log(event),
         <tr key={event._id}>
           <td>{event.category}</td>
-          <td>{event.price}</td>
-          <td>{((event.assistance / event.capacity) * 100).toFixed(2)}%</td>
+          <td>$ {((event.assistance || event.estimate) * event.price).toFixed(2)}</td>
+          <td>{((event.assistance || event.estimate) / event.capacity * 100).toFixed(2)}%</td>
         </tr>
       ))}
         </tbody>
