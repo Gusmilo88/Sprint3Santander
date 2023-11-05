@@ -12,11 +12,15 @@ const Stats = () => {
 
   //Para sacar el MENOR porcentaje:
   let [lowestAttendanceEvent, setLowestAttendanceEvent] = useState(null);
-  let [lowestAttendancePercentage, setLowestAttendancePercentage] = useState(100); // Inicialízalo en 100%
+  let [lowestAttendancePercentage, setLowestAttendancePercentage] = useState(Infinity); 
 
   //Para sacar el que tiene MÁS capacidad:
   let [largestCapacityEvent, setLargestCapacityEvent] = useState(null);
   let [largestCapacity, setLargestCapacity] = useState(0);
+
+  //Para sacar los eventos FUTUROS:
+  let [upcomingEvents, setUpcomingEvents] = useState([]);
+
 
   let [events, setEvents] = useState([]);
 
@@ -24,9 +28,10 @@ const Stats = () => {
     axios.get('src/data/data.json')
       .then(response => {
         
+        // Obetenemos todos los eventos
         let events = response.data.events;
 
-        // Encuentra el evento con el mayor porcentaje de asistencia
+        // Encuentra el evento con el MAYOR porcentaje de asistencia
         let maxAttendanceEvent = null;
         let maxAttendancePercentage = 0;
 
@@ -37,7 +42,7 @@ const Stats = () => {
           maxAttendancePercentage = attendancePercentage;
           maxAttendanceEvent = event;
         }
-
+          // Encuentra el evento con el MENOR porcentaje de asistencia
         if (attendancePercentage < lowestAttendancePercentage) {
           lowestAttendancePercentage = attendancePercentage;
           lowestAttendanceEvent = event;
@@ -50,12 +55,24 @@ const Stats = () => {
         }
       }
 
+      //Sacamos la fecha del JSON
+      const currentDate = new Date(response.data.currentDate);
+
+      //Filtramos para tener los eventos futuros
+      const futureEvents = events.filter(event => new Date(event.date) > currentDate);
+
+      //Mostramos solamente 5 eventos
+      const upcoming = futureEvents.slice(0, 5);
+
+      //Seteamos con los nuevos valores
       setHighestAttendanceEvent(maxAttendanceEvent);
       setHighestAttendancePercentage(maxAttendancePercentage);
       setLowestAttendanceEvent(lowestAttendanceEvent);
       setLowestAttendancePercentage(lowestAttendancePercentage);
       setLargestCapacityEvent(largestCapacityEvent);
       setLargestCapacity(largestCapacity);
+      setUpcomingEvents(upcoming);
+
 
       })
       .catch(error => {
@@ -68,7 +85,7 @@ const Stats = () => {
     <>
       <Layouts>
         <VistaSelector title="Stats" arrowLeft="/contact" arrowRight="/"/>
-        <Tables events={events} highestAttendanceEvent={highestAttendanceEvent} highestAttendancePercentage={highestAttendancePercentage} lowestAttendanceEvent={lowestAttendanceEvent} lowestAttendancePercentage={lowestAttendancePercentage} largestCapacityEvent={largestCapacityEvent} largestCapacity={largestCapacity} />
+        <Tables events={events} highestAttendanceEvent={highestAttendanceEvent} highestAttendancePercentage={highestAttendancePercentage} lowestAttendanceEvent={lowestAttendanceEvent} lowestAttendancePercentage={lowestAttendancePercentage} largestCapacityEvent={largestCapacityEvent} largestCapacity={largestCapacity} upcomingEvents={upcomingEvents} />
       </Layouts>
     </>
   );

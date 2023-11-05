@@ -1,4 +1,4 @@
-const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lowestAttendanceEvent, lowestAttendancePercentage, largestCapacityEvent, largestCapacity}) => {
+const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lowestAttendanceEvent, lowestAttendancePercentage, largestCapacityEvent, largestCapacity, upcomingEvents}) => {
   
   return (
     <div role="tables">
@@ -38,11 +38,13 @@ const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lo
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>1</td>
-            <td>1</td>
-          </tr>
+        {upcomingEvents.map(event => (
+        <tr key={event._id}>
+          <td>{event.category}</td>
+          <td>{event.price}</td>
+          <td>{((event.assistance / event.capacity) * 100).toFixed(2)}%</td>
+        </tr>
+      ))}
         </tbody>
       </table>
       </div>
