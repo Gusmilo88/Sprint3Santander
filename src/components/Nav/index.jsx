@@ -14,7 +14,7 @@ const Nav = () => {
                 <Link to={"/"}>
                   <img
                     id="imgLogo"
-                    className="h-16 w-auto"
+                    className="h-16 w-auto m-4 p-2"
                     src="/src/assets/images/logo.png"
                     alt="Logo Amazing Events"
                   />

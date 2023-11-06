@@ -38,7 +38,7 @@ const PastEvents = () => {
       <Layouts>
       <Carousel/>
       <VistaSelector title="Past Events" arrowLeft="/upcomingEvents" arrowRight="/contact"/>
-      <SearchBar setEventosFiltrados={setEventosFiltrados}/>
+      <SearchBar setEventosFiltrados={setEventosFiltrados} />
       <Checkboxs setEventosFiltrados={setEventosFiltrados}/>
       <DivH2 title="Experiencias que hicieron historia:"/>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 justify-center mx-4">
