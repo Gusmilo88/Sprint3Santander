@@ -1,3 +1,5 @@
+import'./style.css'
+
 const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lowestAttendanceEvent, lowestAttendancePercentage, largestCapacityEvent, largestCapacity, upcomingEvents, pastEvents}) => {
   
   return (
@@ -9,16 +11,16 @@ const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lo
           <tr>
             <th colSpan={3} className="text-center text-2xl">Events statistics</th>
           </tr>
-          <tr>
-            <th>Events with the highest percentage of assistance</th>
-            <th>Events with the lowest percentage of assistance</th>
-            <th>Events with the largest capacity</th>
+          <tr className="text-center">
+            <th>Event with the highest percentage of assistance:</th>
+            <th>Event with the lowest percentage of assistance:</th>
+            <th>Event with the largest capacity:</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr className="text-center">
             <td>{highestAttendanceEvent ? highestAttendanceEvent.name : "No hay infomarción disponible"}: {highestAttendancePercentage.toFixed(2)} %</td>
-            <td>{lowestAttendanceEvent ? lowestAttendanceEvent.name : "No hay información disponible"}: {lowestAttendancePercentage.toFixed(2)}% </td>
+            <td>{lowestAttendanceEvent ? lowestAttendanceEvent.name : "No hay información disponible"}: {lowestAttendancePercentage.toFixed(2)} % </td>
             <td>{largestCapacityEvent ? largestCapacityEvent.name : "No hay información disponible"}: {largestCapacity}</td>
           </tr>
         </tbody>
@@ -31,18 +33,18 @@ const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lo
           <tr>
             <th colSpan={3} className="text-center text-2xl">Upcoming events statistics by category</th>
           </tr>
-          <tr>
-            <th>Categories</th>
-            <th>Revenues</th>
-            <th>Porcentage of attendance</th>
+          <tr className="text-center">
+            <th>Categories:</th>
+            <th>Revenues:</th>
+            <th>% of attendance:</th>
           </tr>
         </thead>
         <tbody>
         {upcomingEvents.map(event => (
-        <tr key={event._id}>
+        <tr key={event._id} className="text-center">
           <td>{event.category}</td>
           <td>$ {((event.assistance || event.estimate) * event.price).toFixed(2)}</td>
-          <td>{((event.assistance || event.estimate) / event.capacity * 100).toFixed(2)}%</td>
+          <td>{((event.assistance || event.estimate) / event.capacity * 100).toFixed(2)} %</td>
         </tr>
       ))}
         </tbody>
@@ -56,18 +58,18 @@ const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lo
           <tr>
             <th colSpan={3} className="text-center text-2xl">Past events statistics by category</th>
           </tr>
-          <tr>
-            <th>Categories</th>
-            <th>Revenues</th>
-            <th>Porcentage of attendance</th>
+          <tr className="text-center">
+            <th>Categories:</th>
+            <th>Revenues:</th>
+            <th>% of attendance:</th>
           </tr>
         </thead>
         <tbody>
       {pastEvents.map(event => (
-        <tr key={event._id}>
+        <tr key={event._id} className="text-center">
           <td>{event.category}</td>
           <td>$ {((event.assistance || event.estimate) * event.price).toFixed(2)}</td>
-          <td>{((event.assistance || event.estimate) / event.capacity * 100).toFixed(2)}%</td>
+          <td>{((event.assistance || event.estimate) / event.capacity * 100).toFixed(2)} %</td>
         </tr>
       ))}
     </tbody>
