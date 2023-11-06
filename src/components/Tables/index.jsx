@@ -9,12 +9,12 @@ const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lo
       <table className="table table-dark table-striped">
         <thead>
           <tr>
-            <th colSpan={3} className="text-center text-2xl">Events statistics</th>
+            <th colSpan={3} className="text-center text-3xl">Events statistics</th>
           </tr>
           <tr className="text-center">
-            <th>Event with the highest percentage of assistance:</th>
-            <th>Event with the lowest percentage of assistance:</th>
-            <th>Event with the largest capacity:</th>
+            <th>With the highest % of assistance:</th>
+            <th>With the lowest % of assistance:</th>
+            <th>With the largest capacity:</th>
           </tr>
         </thead>
         <tbody>
@@ -31,7 +31,7 @@ const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lo
       <table className="table table-dark table-striped">
         <thead>
           <tr>
-            <th colSpan={3} className="text-center text-2xl">Upcoming events statistics by category</th>
+            <th colSpan={3} className="text-center text-3xl">Upcoming events statistics by category</th>
           </tr>
           <tr className="text-center">
             <th>Categories:</th>
@@ -56,7 +56,7 @@ const Tables = ({ events, highestAttendanceEvent, highestAttendancePercentage,lo
       <table className="table table-dark table-striped">
         <thead>
           <tr>
-            <th colSpan={3} className="text-center text-2xl">Past events statistics by category</th>
+            <th colSpan={3} className="text-center text-3xl">Past events statistics by category</th>
           </tr>
           <tr className="text-center">
             <th>Categories:</th>
