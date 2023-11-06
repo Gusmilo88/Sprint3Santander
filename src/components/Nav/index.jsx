@@ -73,6 +73,16 @@ const Nav = () => {
                       ></i>
                       Stats
                     </Link>
+                    <Link
+                      to={"/login"}
+                      className="text-white hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+                    >
+                      <i
+                        className="fa-solid fa-user"
+                        style={{color: "#ffffff"}}
+                      ></i>
+                      Login
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -83,25 +93,25 @@ const Nav = () => {
           <div className="sm:hidden" id="mobile-menu">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-              <a
+              <Link
                 id="iconsNavMobile"
-                href="./home.html"
+                to={"/home"}
                 className=" text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 <i className="fa-solid fa-house" style={{color: "#ffffff"}}></i>
                 Home
-              </a>
-              <a
+              </Link>
+              <Link
                 id="iconsNavMobile"
-                href="./upcomingEvents.html"
+                to={"/upcomingEvents"}
                 className="text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 <i className="fa-solid fa-calendar" style={{color: "#ffffff"}}></i>
                 Upcoming Events
-              </a>
-              <a
+              </Link>
+              <Link
                 id="iconsNavMobile"
-                href="./pastEvents.html"
+                to={"/pastEvents"}
                 className="text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 <i
@@ -109,26 +119,37 @@ const Nav = () => {
                   style={{color: "#fcfcfc"}}
                 ></i>
                 Past Events
-              </a>
-              <a
+              </Link>
+              <Link
                 id="iconsNavMobile"
-                href="./contact.html"
+                to={"/contact"}
                 className="text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 <i className="fa-solid fa-envelope" style={{color: "#ffffff"}}></i>
                 Contact
-              </a>
-              <a
+              </Link>
+              <Link
                 id="iconsNavMobile"
-                href="./stats.html"
+                to={"/stats"}
                 className="text-white block rounded-md px-3 py-2 text-base font-medium"
               >
-                <i
+                <Link
                   className="fa-solid fa-chart-line"
                   style={{color: "#ffffff"}}
-                ></i>
+                ></Link>
                 Stats
-              </a>
+              </Link>
+              <Link
+                id="iconsNavMobile"
+                to={"/login"}
+                className="text-white block rounded-md px-3 py-2 text-base font-medium"
+              >
+                <Link
+                  className="fa-solid fa-user"
+                  style={{color: "#ffffff"}}
+                ></Link>
+                Login
+              </Link>
             </div>
           </div>
         </nav>
