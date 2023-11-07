@@ -5,7 +5,7 @@ const Register = () => {
   return (
     <div>
       <Layouts>
-        <Login/>
+        <Login buttonText={"Login"} pathText={"/"}/>
       </Layouts>
     </div>
   )

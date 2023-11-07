@@ -2,13 +2,13 @@ import "./style.css";
 import { Link } from "react-router-dom"
 import Button from "../Button"
 
-const Login = () => {
+const Login = ({buttonText, pathText}) => {
   return (
     <div>
       <section className="bg-gray-50 dark:bg-gray-900">
   <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
     <Link href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-      <img className="mx-auto w-48" src="/src/assets/images/logo.png" alt="logo" />  
+      <img className="mx-auto w-20" src="/src/assets/images/logo.png" alt="logo" />  
     </Link>
     <div className="w-full bg-black rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
       <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -35,9 +35,9 @@ const Login = () => {
             </div>
             <Link id="forgot" href="#" className="text-sm font-medium">Forgot password?</Link>
           </div>
-          <Button/>
-          <p className="text-sm">
-            Don’t have an account yet? <Link href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</Link>
+          <Button buttonName={buttonText} path={pathText}/>
+          <p id="pLogin" className="text-sm">
+            Don’t have an account yet? <Link id="signUp" href="#" className="font-medium">Sign up</Link>
           </p>
         </form>
       </div>
