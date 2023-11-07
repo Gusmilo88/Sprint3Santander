@@ -33,10 +33,10 @@ const Login = () => {
                 <label htmlFor="remember" className="text-gray-500 dark:text-gray-300">Remember me</label>
               </div>
             </div>
-            <Link href="#" className="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">Forgot password?</Link>
+            <Link id="forgot" href="#" className="text-sm font-medium">Forgot password?</Link>
           </div>
           <Button/>
-          <p className="text-sm font-light text-gray-500 dark:text-gray-400">
+          <p className="text-sm">
             Don’t have an account yet? <Link href="#" className="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</Link>
           </p>
         </form>

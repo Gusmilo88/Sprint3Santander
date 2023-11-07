@@ -96,7 +96,7 @@ const Nav = () => {
               <Link
                 id="iconsNavMobile"
                 to={"/home"}
-                className=" text-white block rounded-md px-3 py-2 text-base font-medium"
+                className="text-white block rounded-md px-3 py-2 text-base font-medium"
               >
                 <i className="fa-solid fa-house" style={{color: "#ffffff"}}></i>
                 Home
@@ -133,10 +133,10 @@ const Nav = () => {
                 to={"/stats"}
                 className="text-white block rounded-md px-3 py-2 text-base font-medium"
               >
-                <Link
+                <i
                   className="fa-solid fa-chart-line"
                   style={{color: "#ffffff"}}
-                ></Link>
+                ></i>
                 Stats
               </Link>
               <Link
@@ -144,10 +144,10 @@ const Nav = () => {
                 to={"/login"}
                 className="text-white block rounded-md px-3 py-2 text-base font-medium"
               >
-                <Link
+                <i
                   className="fa-solid fa-user"
                   style={{color: "#ffffff"}}
-                ></Link>
+                ></i>
                 Login
               </Link>
             </div>
