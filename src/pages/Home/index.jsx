@@ -5,25 +5,40 @@ import VistaSelector from '../../components/VistaSelector'
 import SearchBar from '../../components/SearchBar'
 import Layouts from '../../layouts'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import Carousel from '../../components/Carousel'
+import { useDispatch, useSelector } from 'react-redux'
+import eventosActions from '../../store/actions/eventosActions'
 
 
+useDispatch
 
 
 const Home = () => {
 
-  let [eventos, setEventos] = useState([])
+  const eventos = useSelector(store => store.eventos)
+
   let [eventosFiltrados, setEventosFiltrados] = useState([])
 
+  const dispatch = useDispatch()
+  
 
   useEffect(() => {
-    axios.get("src/data/data.json")
-    .then((response) => {
-      setEventos(response.data.events)
-      setEventosFiltrados(response.data.events)
-    })
-  },[])
+
+    
+    // axios.get("src/data/data.json")
+    // .then((response) => {
+    //   setEventos(response.data.events)
+    //   setEventosFiltrados(response.data.events)
+    // })
+
+    if(eventos.length == 0) {
+      dispatch(eventosActions.get_eventos())
+    }else {
+      setEventosFiltrados(eventos)
+    }
+    
+
+  },[eventos])
 
 
   return (

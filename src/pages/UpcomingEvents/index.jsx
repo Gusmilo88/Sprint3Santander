@@ -24,13 +24,13 @@ const UpcomingEvents = () => {
   const [futureEvents, setFutureEvents] = useState([]);
 
   useEffect(() => {
-    axios.get("src/data/data.json")
-    .then((response) => {
-      setEvents(response.data.events)
+    // axios.get("src/data/data.json")
+    // .then((response) => {
+    //   setEvents(response.data.events)
 
-      const filteredFutureEvents = getFutureEvents(response.data.events, "2023-03-10");
-      setFutureEvents(filteredFutureEvents);
-    })
+    //   const filteredFutureEvents = getFutureEvents(response.data.events, "2023-03-10");
+    //   setFutureEvents(filteredFutureEvents);
+    // })
   }, [])
 
   return (

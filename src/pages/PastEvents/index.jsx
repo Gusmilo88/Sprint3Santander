@@ -21,14 +21,14 @@ const PastEvents = () => {
   let [eventosFiltrados, setEventosFiltrados] = useState([])
 
   useEffect(() => {
-    axios.get("src/data/data.json")
-      .then((response) => {
-        setEvents(response.data.events);
+    // axios.get("src/data/data.json")
+    //   .then((response) => {
+    //     setEvents(response.data.events);
 
-        let filteredPastEvents = getPastEvents(response.data.events, "2023-03-10");
-        setPastEvents(filteredPastEvents);
-        setEventosFiltrados(response.data.events)
-      });
+    //     let filteredPastEvents = getPastEvents(response.data.events, "2023-03-10");
+    //     setPastEvents(filteredPastEvents);
+    //     setEventosFiltrados(response.data.events)
+    //   });
   }, []);
 
 

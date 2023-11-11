@@ -20,11 +20,11 @@ const SearchBar = ({setEventosFiltrados}) => {
 
 
   useEffect(() => {
-    axios.get("src/data/data.json")
-    .then((response) => {
-      setEventos(response.data.events)
-      setEventosFiltrados(response.data.events)
-    })
+    // axios.get("src/data/data.json")
+    // .then((response) => {
+    //   setEventos(response.data.events)
+    //   setEventosFiltrados(response.data.events)
+    // })
   },[])
 
 
