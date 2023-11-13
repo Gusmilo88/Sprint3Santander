@@ -1,3 +1,14 @@
 input:checked {
     background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
 }
+
+  #checkboxConcert:checked + .category-checkbox-label #checkboxImage {
+    filter: grayscale(0%);
+  }
+
+span {
+    font-family: 'Inter', sans-serif;
+    font-size: 5vh;
+    text-shadow: 1px 1px 2px black;
+}
+
