@@ -1,11 +1,11 @@
-import Layouts from "../../layouts"
-import Login from "../../components/Login"
+import FormRegister from '../../components/FormRegister'
+import Layouts from '../../layouts'
 
 const Register = () => {
   return (
     <div>
       <Layouts>
-        <Login buttonText={"Login"} pathText={"/"}/>
+        <FormRegister buttonText={"Register"} pathText={"/"}/>
       </Layouts>
     </div>
   )

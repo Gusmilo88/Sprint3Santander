@@ -6,6 +6,7 @@ import Stats from "./pages/Stats"
 import {BrowserRouter as Router, Routes,Route} from "react-router-dom"
 import UpcomingEvents from "./pages/UpcomingEvents"
 import PastEvents from "./pages/PastEvents"
+import Login from "./pages/Login"
 import Register from "./pages/Register"
 
 
@@ -20,7 +21,8 @@ function App() {
           <Route path="/details/:id" element={<Details/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/stats" element={<Stats/>}/>
-          <Route path="/login" element={<Register/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/register" element={<Register/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
     </>
